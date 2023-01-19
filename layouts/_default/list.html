@@ -1,16 +1,20 @@
 {{ define "main" }}
 
+  <p>This is notes/themes/jam/layouts/_default/list.html</p>
+
   {{ .Content }}
+
   <h1>{{ .Title }}</h1>
   {{- $cs := .CurrentSection }}
   {{- with $cs }}
-    {{- range (where .Site.RegularPages "Section" .Section) }}
+    {{- range (where .Site.RegularPages.ByLastmod.Reverse "Section" .Section) }}
       {{- if .IsDescendant $cs }}
   <article class="list">
       <a href="{{ .RelPermalink }}">{{ .Title }}</a>
-      <time>{{ .Date.Format "02/01/2006" }}</time>
+      <time>{{ .Lastmod.Format "02/01/2006" }}</time>
   </article>
       {{- end }}
     {{- end }}
   {{- end }}
+
 {{ end }}

@@ -1,10 +1,12 @@
 {{ define "main" }}
   
+  <p>This is notes/themes/jam/layouts/index.html</p>
+
   {{ .Content }}
-  
-  {{ if gt ( len ( where .Pages "Section" "writing" )) 0 }}
-    <h2>Latest articles</h2>
-    {{ range first 3 ( where .Site.RegularPages "Section" "writing" ) }}
+
+  {{ if gt ( len ( where .Pages "Section" "posts" )) 0 }}
+    <h2>Latest posts</h2>
+    {{ range first 3 ( where .Site.RegularPages.ByLastmod.Reverse "Section" "posts" ) }}
       <article class="list">
           <a href="{{ .RelPermalink }}">{{ .Title }}</a>
           <time>{{ .Date.Format "02/01/2006" }}</time>
@@ -12,9 +14,9 @@
     {{ end }}
   {{ end }}
 
-  {{ if gt ( len ( where .Pages "Section" "projects" )) 0 }}
-    <h2>Latest projects</h2>
-    {{ range first 3 ( where .Site.RegularPages "Section" "projects" ) }}
+  {{ if gt ( len ( where .Pages "Section" "docs" )) 0 }}
+    <h2>Latest docs</h2>
+    {{ range first 3 ( where .Site.RegularPages.ByLastmod.Reverse "Section" "docs" ) }}
       <article class="list">
           <a href="{{ .RelPermalink }}">{{ .Title }}</a>
           <time>{{ .Date.Format "02/01/2006" }}</time>

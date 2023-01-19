@@ -19,11 +19,14 @@ html {
   min-height: 100%;
 }
 
+@import url('https://fonts.googleapis.com/css2?family=Inter&display=swap');
+
 body {
-  font-family: -apple-system,BlinkMacSystemFont,avenir next,avenir,helvetica,helvetica neue,ubuntu,roboto,noto,segoe ui,arial,sans-serif;
+  font-family: 'Inter', sans-serif;
+  font-size: 16px;
   line-height: 1.5;
   color: #333;
-  background-color: #333;
+  background-color: #fff;
   margin: 0;
 }
 
@@ -62,11 +65,12 @@ ul, ol {
 }
 
 code, pre {
-  font-family: San Francisco Mono,Monaco,consolas,lucida console,dejavu sans mono,bitstream vera sans mono,monospace;
+  font-family: 'SF Mono', monospace;
 }
+
 pre, code {
-  font-size: small;
 }
+
 code {
   background-color: #333;
   color: #fff;
@@ -87,7 +91,7 @@ img {
 }
 
 main {
-  max-width: 70ch;
+  max-width: 70%;
   margin: 0 auto;
   box-sizing: border-box;
   min-height: 100%;
@@ -99,7 +103,7 @@ footer {
   border-top: 1px solid #333;
   background-color: #fff;
   padding: 2rem;
-  max-width: 70ch;
+  max-width: 70%;
   margin: 0 auto;
   color: #333;
 }
