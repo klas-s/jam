@@ -72,15 +72,17 @@ pre, code {
 }
 
 code {
-  background-color: #333;
-  color: #fff;
+  background-color: #eee;
+  color: #333;
   padding: 0.2rem 0.4rem;
+  border-radius: 4px;
 }
 
 pre code {
   display: block;
   border: none;
   background-color: #333;
+  border-radius: 4px;
   color: #fff;
   padding: 1em;
   overflow-x: auto;
