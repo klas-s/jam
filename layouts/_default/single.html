@@ -2,6 +2,17 @@
 
   <p>This is notes/themes/jam/layouts/_default/single.html</p>
 
+  {{if .NextPage}}
+  <div>
+  <a href=" {{.NextPage.Permalink}} ">Next</a>
+  </div>
+  {{end}}
+  {{if .PrevPage}}
+  <div>
+  <a href=" {{.PrevPage.Permalink}} ">Prev</a>
+  </div>
+  {{end}}
+
   <h1>{{ .Title }}</h1>
 
   {{ $lastmod := .Lastmod.UTC.Format "Jan 2, 2006" }}
